@@ -13,9 +13,6 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
-}
-
-repositories {
     maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
 }
 
