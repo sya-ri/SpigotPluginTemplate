@@ -14,10 +14,10 @@
 package sample // TODO 固有のパッケージ名を設定する
 ```
 
-> e.g. GitHub のユーザー名が `abcdef` だったら
-> 
+> e.g. GitHub のユーザー名が `abcdef` で、作るプラグインの名前が `Sample` だったら
+>
 > ```kotlin
-> package com.github.abcdef
+> package com.github.abcdef.sample
 > ```
 
 ### [build.gradle.kts](build.gradle.kts)
@@ -29,12 +29,12 @@ configure<BukkitPluginDescription> {
     // ...
 }
 ```
-> e.g. GitHub のユーザー名が `abcdef` だったら
+> e.g. GitHub のユーザー名が `abcdef` で、作るプラグインの名前が `Sample` だったら
 >
 > ```kotlin
 > configure<BukkitPluginDescription> {
 >     // ...
->     main = "com.github.abcdef.Main"
+>     main = "com.github.abcdef.sample.Main"
 >     // ...
 > }
 > ```
