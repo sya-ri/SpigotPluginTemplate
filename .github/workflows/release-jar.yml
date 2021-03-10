@@ -20,23 +20,15 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew shadowJar
-      - name: Add JarFile Path to Environment Variable
-        run: echo "JAR_FILE_NAME=`ls build/libs`" >> $GITHUB_ENV
-      - name: Create Release
-        uses: actions/create-release@master
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get The Version
+        id: version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          name: Release ${{ steps.version.outputs.VERSION }}
           draft: true
-      - name: Upload Jar
-        uses: actions/upload-release-asset@master
+          files: |
+            build/libs/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/libs/${{ env.JAR_FILE_NAME }}
-          asset_name: ${{ env.JAR_FILE_NAME }}
-          asset_content_type: application/java-archive
