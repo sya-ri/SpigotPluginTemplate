@@ -28,7 +28,7 @@ dependencies {
 }
 
 configure<KtlintExtension> {
-    version.set("0.40.0")
+    version.set("0.41.0")
 }
 
 tasks.withType<ShadowJar> {
