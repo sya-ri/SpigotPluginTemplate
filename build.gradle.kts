@@ -3,7 +3,7 @@ import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 plugins {
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm") version "1.4.32"
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.3.0"
@@ -22,7 +22,7 @@ configurations["implementation"].extendsFrom(shadowImplementation)
 dependencies {
     shadowImplementation(kotlin("stdlib"))
     implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.2.1") {
+    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.2.2") {
         exclude(group = "org.spigotmc", module = "spigot-api")
     }
 }
