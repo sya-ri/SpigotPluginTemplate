@@ -4,7 +4,7 @@ import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 plugins {
     kotlin("jvm") version "1.5.10"
-    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
     id("com.github.johnrengelman.shadow") version "7.0.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.4.0"
 }
@@ -22,7 +22,7 @@ configurations["implementation"].extendsFrom(shadowImplementation)
 dependencies {
     shadowImplementation(kotlin("stdlib"))
     implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.3.2") {
+    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.3.3") {
         exclude(group = "org.spigotmc", module = "spigot-api")
     }
 }
