@@ -51,19 +51,12 @@ configure<BukkitPluginDescription> {
 
 ## Gradle Task
 
-### ktlintFormat
+### formatKotlin
 ```
-gradle ktlintFormat
+gradle formatKotlin
 ```
 
 ソースコードを綺麗にすることができます。
-
-### addKtlintFormatGitPreCommitHook
-```
-gradle addKtlintFormatGitPreCommitHook
-```
-
-Git Commit する時に `ktlintFormat` を実行します。やっておくことで必ずフォーマットしてくれるようになるので忘れがちな人にオススメです。
 
 ### shadowJar
 ```

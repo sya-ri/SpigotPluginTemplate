@@ -1,10 +1,9 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
-import org.jlleitschuh.gradle.ktlint.KtlintExtension
 
 plugins {
     kotlin("jvm") version "1.5.21"
-    id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
+    id("org.jmailen.kotlinter") version "3.5.0"
     id("com.github.johnrengelman.shadow") version "7.0.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.4.0"
     id("com.github.ben-manes.versions") version "0.39.0"
@@ -26,10 +25,6 @@ dependencies {
     shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.4.0") {
         exclude(group = "org.spigotmc", module = "spigot-api")
     }
-}
-
-configure<KtlintExtension> {
-    version.set("0.41.0")
 }
 
 tasks.withType<ShadowJar> {
