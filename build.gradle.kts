@@ -21,8 +21,8 @@ configurations["implementation"].extendsFrom(shadowImplementation)
 
 dependencies {
     shadowImplementation(kotlin("stdlib"))
-    implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.3.3") {
+    implementation("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
+    shadowImplementation("com.github.sya-ri:EasySpigotAPI:2.4.0") {
         exclude(group = "org.spigotmc", module = "spigot-api")
     }
 }
@@ -40,5 +40,5 @@ configure<BukkitPluginDescription> {
     name = project.name
     version = project.version.toString()
     main = "sample.Main" // TODO JavaPlugin を継承したクラスとパッケージを入力する
-    apiVersion = "1.16"
+    apiVersion = "1.17"
 }
